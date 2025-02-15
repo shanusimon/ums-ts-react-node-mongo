@@ -1,0 +1,308 @@
+/* Dashboard.css */
+
+/* Container Styles */
+.dashboard-container {
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    padding: 2rem 1rem;
+  }
+  
+  /* Card Styles */
+  .dashboard-card {
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Header Styles */
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Profile Image Styles */
+  .profile-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  
+  .profile-image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .profile-image:hover {
+    transform: scale(1.05);
+    border-color: #3b82f6;
+  }
+  
+  /* User Info Styles */
+  .user-info {
+    margin-top: 1.5rem;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+  }
+  
+  .info-label {
+    font-weight: 600;
+    color: #4b5563;
+    min-width: 5rem;
+  }
+  
+  .info-value {
+    color: #1f2937;
+    margin-left: 0.5rem;
+  }
+  
+  /* Loading State */
+  .loading-message {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.125rem;
+    padding: 2rem;
+  }
+  
+  /* Error State */
+  .error-message {
+    text-align: center;
+    color: #dc2626;
+    font-size: 1.125rem;
+    padding: 2rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 640px) {
+    .dashboard-card {
+      padding: 1.5rem;
+    }
+  
+    .profile-image {
+      width: 6rem;
+      height: 6rem;
+    }
+  
+    .dashboard-title {
+      font-size: 1.25rem;
+    }
+  
+    .info-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .info-label {
+      margin-bottom: 0.25rem;
+    }
+  
+    .info-value {
+      margin-left: 0;
+    }
+  }
+  
+  /* Animation for Loading States */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  /* Modal Overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it's above everything */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal Heading */
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Input Fields */
+.modal-content label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.modal-content input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.save-btn, .cancel-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+  margin-right: 10px;
+}
+
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+.cancel-btn:hover {
+  background: #c82333;
+}
+
+/* Preview Image */
+.preview-image {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .modal-content {
+    width: 95%;
+  }
+  
+  .save-btn, .cancel-btn {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+.dashboard-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.edit-profile-btn,
+.logout-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Edit Profile Button */
+.edit-profile-btn {
+  background-color: #007bff; /* Blue color */
+  color: white;
+}
+
+.edit-profile-btn:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #ff4d4d; /* Red color */
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000; /* Darker red */
+}

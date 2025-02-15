@@ -1,0 +1,128 @@
+/* Admin Login Page Styles */
+
+/* Variables */
+:root {
+    --color-primary: #2c3e50;
+    --color-secondary: #3498db;
+    --color-background: #ecf0f1;
+    --color-text: #333333;
+    --color-error: #e74c3c;
+    --font-family: "Arial", sans-serif;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  /* Base Styles */
+  body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container */
+  .admin-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Card */
+  .admin-login__card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Title */
+  .admin-login__title {
+    color: var(--color-primary);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Form */
+  .admin-login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Input Group */
+  .admin-login__input-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-login__label {
+    color: var(--color-text);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .admin-login__input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px;
+    transition: var(--transition);
+  }
+  
+  .admin-login__input:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
+  }
+  
+  /* Button */
+  .admin-login__button {
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px;
+    transition: var(--transition);
+  }
+  
+  .admin-login__button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Error Message */
+  .admin-login__error {
+    background-color: var(--color-error);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .admin-login__card {
+      padding: 30px;
+    }
+  
+    .admin-login__title {
+      font-size: 22px;
+    }
+  
+    .admin-login__input,
+    .admin-login__button {
+      font-size: 14px;
+    }
+  }
+  
+  

@@ -1,0 +1,86 @@
+.dashboard-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.add-user-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.add-user-btn:hover {
+    background: darkgreen;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+.users-table th, .users-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.users-table th {
+    background: #ececec;
+}
+
+.user-image {
+    width: 60px;
+}
+/* Common button styles */
+.edit-btn,
+.delete-btn {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #3498db; /* Blue */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #e74c3c; /* Red */
+  color: white;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
