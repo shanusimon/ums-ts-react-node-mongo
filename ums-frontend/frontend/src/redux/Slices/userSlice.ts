@@ -24,6 +24,7 @@ const initialState : AuthState = {
     error: null
 }
 
+
 export const updateUserProfile = createAsyncThunk(
     "auth/updateUserProfile",
     async (updatedData:Partial<User>,{rejectWithValue}) => {

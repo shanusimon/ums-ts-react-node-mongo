@@ -13,13 +13,15 @@ const adminpersistConfig = {
     storage
 }
 
+
 const persistAuthReducer = persistReducer(persistConfig,authReducer);
 const persistAdminReducer = persistReducer(adminpersistConfig,adminReducer)
+
 
 export const store = configureStore({
     reducer:{
         auth:persistAuthReducer,
-        admin:persistAdminReducer
+        admin:persistAdminReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

@@ -5,7 +5,7 @@ import { deleteUser, fetchAllUsers} from '../../redux/Slices/adminSlice';
 import AddUserModel from './AddUserModel';
 import './AdminDashboard.css';
 import { createUserAPI, updateUserAPi } from '../../api/adminAuth';
-import EditUserModel from './EditUSerModel';
+import EditUserModel from './EditUserModel';
 import {toast} from "react-toastify"
 import Swal from "sweetalert2";
 
@@ -26,7 +26,8 @@ export default function AdminDashboard() {
     const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
     const [isEditUserModelOpen,setIsEditUserModelOpen] = useState(false);
     const [selectedUser,setSelectedUser] = useState<Userdate | null>(null)
-
+    const [searchQuery,setSearchquery] = useState<string>("")
+    
     const users = useSelector((state: RootState) => state.admin.users) || [];
     const admin = useSelector((state: RootState) => state.admin.admin);
 
@@ -109,7 +110,10 @@ export default function AdminDashboard() {
             toast.error("Failed to delete user");
         }
     };
-    
+
+    const filteredUsers = users.filter(user => 
+        user.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     if (loading) return <div className="loading">Loading...</div>;
     if (error) return <div className="error">{error}</div>;
@@ -120,6 +124,13 @@ export default function AdminDashboard() {
 
             <button className="add-user-btn" onClick={()=>setIsAddUserModalOpen(true)} >Add User</button>
 
+            <input
+            type='text'
+            placeholder='Seacrh by name'
+            value={searchQuery}
+            onChange={(e)=> setSearchquery(e.target.value)}
+            className='search-button'
+            />
             <table className="users-table">
                 <thead>
                     <tr>
@@ -131,8 +142,8 @@ export default function AdminDashboard() {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.length > 0 ? (
-                        users.map((user,index) => (
+                    {filteredUsers.length > 0 ? (
+                        filteredUsers.map((user,index) => (
                             <tr key={index}>
                                 <td><img src={user.profileImage || '/default-avatar.png'} alt="User" className="user-image" /></td>
                                 <td>{user.name}</td>

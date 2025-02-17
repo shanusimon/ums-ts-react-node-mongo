@@ -84,3 +84,6 @@
   background-color: #c0392b;
   transform: scale(1.05);
 }
+.search-button{
+  width: 250px;
+}
